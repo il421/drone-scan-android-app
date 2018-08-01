@@ -1,2 +1,2 @@
-# Android integrated with OpenCV
-Sample Android project integrated with OpenCV Library 3.4.2
+# Drone Scanning Android App
+Android project using DJI Mobile SDK
