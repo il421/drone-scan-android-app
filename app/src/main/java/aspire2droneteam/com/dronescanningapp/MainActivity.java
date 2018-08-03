@@ -6,7 +6,6 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
-import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -37,9 +36,9 @@ public class MainActivity extends AppCompatActivity {
             Manifest.permission.INTERNET,
             Manifest.permission.ACCESS_WIFI_STATE,
             Manifest.permission.WAKE_LOCK,
-//            Manifest.permission.ACCESS_COARSE_LOCATION,
+            // Manifest.permission.ACCESS_COARSE_LOCATION,
             Manifest.permission.ACCESS_NETWORK_STATE,
-            Manifest.permission.ACCESS_FINE_LOCATION,
+//            Manifest.permission.ACCESS_FINE_LOCATION,
             Manifest.permission.CHANGE_WIFI_STATE,
             Manifest.permission.WRITE_EXTERNAL_STORAGE,
             Manifest.permission.BLUETOOTH,
@@ -56,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         // System.loadLibrary("openCV_java3");
 
-        // When the compile and target version is higher than 22, please request the following permission at runtime to ensure the SDK works well.
+        // Permissions for compile and target version higher than 22
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             checkAndRequestPermissions();
         }
@@ -122,26 +121,18 @@ public class MainActivity extends AppCompatActivity {
             AsyncTask.execute(new Runnable() {
                 @Override
                 public void run() {
-                    showToast("registering, pls wait...");
+                    showToast("Registering...");
                     DJISDKManager.getInstance().registerApp(MainActivity.this.getApplicationContext(), new DJISDKManager.SDKManagerCallback() {
                         @Override
                         public void onRegister(DJIError djiError) {
                             if (djiError == DJISDKError.REGISTRATION_SUCCESS) {
-                                showToast("Register Success");
+                                showToast("Registration Successful");
                                 DJISDKManager.getInstance().startConnectionToProduct();
                             } else {
-                                showToast("Register sdk fails, please check the bundle id and network connection!");
+                                showToast("SDK Registration Failed, check bundle id or network connection.");
                             }
                             Log.v(TAG, djiError.getDescription());
                         }
-                        /*@Override
-                        public void onProductChange(BaseProduct oldProduct, BaseProduct newProduct) {
-                            mProduct = newProduct;
-                            if(mProduct != null) {
-                                mProduct.setBaseProductListener(mDJIBaseProductListener);
-                            }
-                            notifyStatusChange();
-                        }*/
 
                         @Override
                         public void onProductConnect(BaseProduct baseProduct) {
@@ -173,19 +164,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-//    private BaseProduct.BaseProductListener mDJIBaseProductListener = new BaseProduct.BaseProductListener() {
-//        @Override
-//        public void onComponentChange(BaseProduct.ComponentKey key, BaseComponent oldComponent, BaseComponent newComponent) {
-//            if(newComponent != null) {
-//                newComponent.setComponentListener(mDJIComponentListener);
-//            }
-//            notifyStatusChange();
-//        }
-//        @Override
-//        public void onConnectivityChange(boolean isConnected) {
-//            notifyStatusChange();
-//        }
-//    };
     private BaseComponent.ComponentListener mDJIComponentListener = new BaseComponent.ComponentListener() {
         @Override
         public void onConnectivityChange(boolean isConnected) {
