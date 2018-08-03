@@ -81,10 +81,9 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation project(':openCVLibrary342')
-    implementation ('com.dji:dji-uxsdk:4.6')
-    implementation ('com.dji:dji-sdk:4.6')
-    compileOnly ('com.dji:dji-sdk-provided:4.6')
+    implementation 'com.dji:dji-uxsdk:4.6'
+    implementation 'com.dji:dji-sdk:4.6'
+    compileOnly 'com.dji:dji-sdk-provided:4.6'
     implementation 'com.android.support:animated-vector-drawable:28.0.0-beta01'
     implementation 'com.android.support:recyclerview-v7:28.0.0-beta01'
     implementation 'com.android.support:support-media-compat:28.0.0-beta01'
