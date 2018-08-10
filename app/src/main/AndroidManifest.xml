@@ -60,8 +60,8 @@
         </activity>
         <service android:name="dji.sdk.sdkmanager.DJIGlobalService" >
         </service>
-        <!-- DJI SDK -->
 
+        <!-- DJI SDK -->
         <activity android:name=".MainActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait" >
@@ -71,6 +71,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!--Scanning Activity-->
+        <activity android:name="."
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="aspire2droneteam.com.dronescanningapp.ANOTHER_ACTIVITY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>

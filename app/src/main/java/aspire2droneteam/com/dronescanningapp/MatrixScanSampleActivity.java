@@ -51,7 +51,6 @@ public class MatrixScanSampleActivity
         super.onCreate(savedInstanceState);
 
         ScanditLicense.setAppKey(sScanditSdkAppKey);
-
         // Initialize and start the bar code recognition.
         initializeAndStartBarcodeScanning();
     }
@@ -219,6 +218,8 @@ public class MatrixScanSampleActivity
                 mRecognizedBarcodes.add(newBarcode);
             }
         }
+
+        System.out.println("It's alive!!!!");
     }
 
     private boolean isAlreadyRecognized(Barcode barcode) {

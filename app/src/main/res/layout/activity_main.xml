@@ -8,21 +8,21 @@
     android:orientation="horizontal"
     tools:context=".MainActivity">
 
-    <!--ScannDit layout-->
-    <RelativeLayout
-        android:id="@+id/picker"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    <!--&lt;!&ndash;ScannDit layout&ndash;&gt;-->
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/picker"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent" />-->
 
-    <!--ScannDit btn to get JSON-->
-    <Button
-        android:id="@+id/done_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="40dp"
-        android:text="Get JSON"
-        android:textAllCaps="true" />
+    <!--&lt;!&ndash;ScannDit btn to get JSON&ndash;&gt;-->
+    <!--<Button-->
+        <!--android:id="@+id/done_button"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_margin="100dp"-->
+        <!--android:text="Get JSON"-->
+        <!--android:textAllCaps="true" />-->
 
     <!-- Widget to see first person view (FPV) -->
     <dji.ux.widget.FPVWidget

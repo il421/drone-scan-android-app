@@ -1,6 +1,7 @@
 package aspire2droneteam.com.dronescanningapp;
 
 import android.Manifest;
+import android.content.Intent;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -37,6 +38,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         setContentView(R.layout.activity_main);
+
+//        Start Scanning Sctivity
+        Intent inent = new Intent(this, MatrixScanSampleActivity.class);
+        startActivity(inent);
 
     }
 
